@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vbj-np-SbC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vbj-np-SbC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Table View Controller-->
@@ -36,11 +37,61 @@
                             <outlet property="delegate" destination="dNY-UJ-JDt" id="SH5-nR-KPc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cm4-o6-G3J"/>
+                    <navigationItem key="navigationItem" id="cm4-o6-G3J">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="njL-Ou-7xH">
+                            <connections>
+                                <segue destination="ZXW-lm-oeT" kind="push" id="UIO-Ka-iTa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKX-u5-qfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="707" y="140"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MOp-I3-H5g">
+            <objects>
+                <viewController id="ZXW-lm-oeT" customClass="FISViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lZb-nG-5JQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ihH-il-aza"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Esj-Hw-0nP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your new message here..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJY-dP-9vF">
+                                <rect key="frame" x="47" y="269" width="225" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rco-ej-rV8">
+                                <rect key="frame" x="137" y="307" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="ZXW-lm-oeT" eventType="touchUpInside" id="tK6-sO-5yC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Rco-ej-rV8" secondAttribute="centerX" constant="6" id="EZL-cS-FvQ"/>
+                            <constraint firstAttribute="centerY" secondItem="VJY-dP-9vF" secondAttribute="centerY" id="F4P-j4-i53"/>
+                            <constraint firstAttribute="centerX" secondItem="VJY-dP-9vF" secondAttribute="centerX" id="epK-6F-wWh"/>
+                            <constraint firstItem="Rco-ej-rV8" firstAttribute="top" secondItem="VJY-dP-9vF" secondAttribute="bottom" constant="8" id="vL4-Wo-PpV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GFC-K6-DUf"/>
+                    <connections>
+                        <outlet property="messageTextField" destination="VJY-dP-9vF" id="xsg-q4-ifa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nSD-Vu-eAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KXb-P8-rcA">
